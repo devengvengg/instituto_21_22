@@ -7,6 +7,7 @@ use App\Http\Controllers\API\MateriaController;
 use App\Http\Controllers\API\MatriculaController;
 use App\Http\Controllers\API\PeriodoLectivoController;
 use App\Http\Controllers\API\MateriaMatriculadaController;
+use App\Http\Controllers\API\Peticion_InformacionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Psr\Http\Message\ServerRequestInterface;
@@ -44,6 +45,10 @@ Route::apiResource('materiasmatriculadas', MateriaMatriculadaController::class)
     'materiasmatriculadas' => 'materiaMatriculada'
 ]);
 
+Route::apiResource('peticiones_informacion', Peticion_InformacionController::class)
+->parameters([
+    'peticiones_informacion' => 'Peticion_InformacionController'
+]);
 
 Route::any('/{any}', function (ServerRequestInterface $request) {
     $config = new Config([
