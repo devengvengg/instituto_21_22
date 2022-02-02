@@ -31,7 +31,7 @@ class CentroPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->id == 10; // un ejemplo de autorización a un usuario concreto.
+        return $user->id == 1; // Ej de autorización a un usuario concreto.
     }
 
     /**
